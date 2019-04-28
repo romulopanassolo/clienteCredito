@@ -1,0 +1,47 @@
+
+
+
+<meta charset="utf-8"/>
+<div id="main" class="container-fluid">
+ <h3 class="page-header">Cliente de Crédito</h3>
+ 
+ 
+
+<form name="formDados" novalidate>
+	
+	<div class="row">
+		 <div class="form-group col-md-4">
+		   <label for="campo1">Nome</label>
+		   <input type="text" ng-model="cliente.nome" class="form-control" id="nome" name="nome"  required ng-maxlength="20">
+		   <span ng-show="formDados.nome.$error.required">O campo nome é obrigatório.</span>
+		 </div>
+	 </div>
+	
+	<div class="row">
+		 <div class="form-group col-md-4">
+		   <label for="campo2">Limite</label>
+		   <input type="text" ng-model="cliente.limite" class="form-control"  id="limite" name="limite" required>
+		   <span ng-show="formDados.limite.$error.required">O campo Limite é obrigatório.</span>
+		 </div>
+	 </div>
+	  
+
+	<div class="row">
+		 <div class="form-group col-md-4">
+			<label for="campo4">Risco</label> 
+			<select ng-model="cliente.risco" ng-options="risco for risco in riscos" required>
+			</select>
+			<span ng-show="formDados.limite.$error.required">O campo Risco é obrigatório.</span>
+		</div>
+	</div>
+
+
+		
+	<!-- <input type="button" value="Salvar" ng-click="salvarCliente()"/> -->
+	<button type="submit" class="btn btn-primary" ng-disabled="formDados.$invalid" ng-click="salvarCliente()">Salvar</button>
+	<input type="button"  class="btn btn-primary" value="Cancelar" ng-click="cancelarCliente()"/>
+	
+	
+</form>	
+</div>
+

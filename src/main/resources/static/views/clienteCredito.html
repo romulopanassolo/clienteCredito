@@ -1,0 +1,72 @@
+<meta charset="utf-8"/>
+<div id="main" class="container-fluid">
+     <div id="top" class="row">
+ 
+		    <div class="col-md-3">
+		        <h2>Clientes de Crédito</h2>
+		    </div>
+		 
+		    <div class="col-md-6">
+		        <div class="input-group h2">
+		            <input name="data[search]" ng-model="dataSearch" size="20" class="form-control" id="search" type="text" placeholder="Pesquisar Clientes Crédito">
+		            <span class="input-group-btn">
+		                <button class="btn btn-primary" type="submit">
+		                    <span class="glyphicon glyphicon-search"></span>
+		                </button>
+		            </span>
+		        </div>
+		    </div>
+		 
+		    <div class="col-md-3">
+		        <a href="/#/cadastroClienteCredito" class="btn btn-primary pull-right h2">Novo Cliente de Crédito</a>
+		    </div>
+	</div> <!-- /#top -->
+ 
+     <hr />
+     <div id="list" class="row">
+ 
+    <div class="table-responsive col-md-12" ng-repeat="c in clientes | filter:dataSearch ">
+        <table class="table table-striped" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Limite</th>
+                    <th>Tipo de Risco</th>
+                    <th class="actions">Ações</th>
+                 </tr>
+            </thead>
+            <tbody>
+ 
+                <tr>
+                    <td width="5%">{{c.id}}</td>
+                    <td width="30%">{{c.nome}}</td>
+                    <td width="15%">{{c.limite | currency}}</td>
+                    <td width="10%">{{c.risco}}</td>
+                    <td class="actions">
+                       
+                        <a class="btn btn-warning btn-xs" href="/cadastroClienteCredito/{{c.id}}"">Editar</a>
+                        <a class="btn btn-danger btn-xs"  ng-click="excluirCliente(c)">Excluir</a>
+                    </td>
+                </tr>
+ 
+            </tbody>
+         </table>
+ 
+     </div>
+   </div> <!-- /#list -->
+ 
+	 <div id="bottom" class="row">
+	    <div class="col-md-12">
+	         
+	        <ul class="pagination">
+	            <li class="disabled"><a>&lt; Anterior</a></li>
+	            <li class="disabled"><a>1</a></li>
+	            <li><a href="#">2</a></li>
+	            <li><a href="#">3</a></li>
+	            <li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+	        </ul><!-- /.pagination -->
+	 
+	    </div>
+	</div> <!-- /#bottom -->
+ </div>  <!-- /#main -->

@@ -1,0 +1,49 @@
+<html ng-app="appCreditoRest">
+<head>
+<base href="/"/>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" 
+th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+rel="stylesheet" media="screen"/>
+
+<script	src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+     th:href="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+
+
+<!-- locale -->
+<script src="./locale/angular-locale_pt-br.js"></script>
+
+<!-- controllers -->
+<script src="./js/app.js"></script>
+<script src="./js/controller/main-controller.js"></script>
+<script src="./js/controller/cliente-credito-controller.js"></script>
+<script src="./js/service/clienteCreditoApiService.js"></script>
+<script src="./js/constant/configValue.js"></script>
+
+
+</head>
+
+<body ng-controller="mainController">
+<div class="jumbotron" align="center">Cadastro de Clientes para Crédito</div>
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="/#/cadastroClienteCredito">Cadastro</a></li>
+  <li role="presentation"><a href="/#/clienteCredito">Pesquisar Cliente</a></li>
+</ul>
+
+
+<div ng-view ="ng-view">
+
+{{mensagem}}
+
+</div>
+
+</body>
+
+</html>
